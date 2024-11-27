@@ -243,6 +243,9 @@ if st.button('Get Your BMI Prediction', key='predict_button', help='Click to get
         </div>
     """, unsafe_allow_html=True)
 
+    if st.button('Reset', key='reset_button', help='Click to reset all inputs'):
+        st.experimental_rerun()
+
 # Footer and Social Media Links
 st.markdown("""
     <div style="
