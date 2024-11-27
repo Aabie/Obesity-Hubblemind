@@ -6,7 +6,7 @@ import numpy as np
 
 # Page configuration
 st.set_page_config(
-    page_title="BMI Prediction App",
+    page_title="Weight Estimation App",
     page_icon="🏥",
     layout="wide"
 )
@@ -151,13 +151,13 @@ def load_model():
 model = load_model()
 
 # Modern header
-st.markdown('<h1 style="text-align: center;">🏥 BMI Prediction System</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="text-align: center;">🏥 Weight Estimation App</h1>', unsafe_allow_html=True)
 
 # Description
 st.markdown("""
     <div class="custom-container">
-        <h3>Welcome to BMI Prediction System</h3>
-        <p>This intelligent system predicts BMI category based on your lifestyle factors. 
+        <h3>Welcome to Weight Estimation App</h3>
+        <p>This intelligent system predicts weight category based on your lifestyle factors. 
         Fill in your information below for an accurate prediction.</p>
     </div>
 """, unsafe_allow_html=True)
@@ -229,7 +229,7 @@ input_data = pd.DataFrame({
 with open('label_mappings.json', 'r') as file:
     label_encoders = json.load(file)
 
-if st.button('Get Your BMI Prediction', key='predict_button', help='Click to get your BMI prediction'):
+if st.button('Get Your Weight Prediction', key='predict_button', help='Click to get your Weight prediction'):
     prediction = model.predict(input_data)
     probabilities = model.predict_proba(input_data)[0]
     result = list(label_encoders["NObeyesdad"].keys())[prediction[0]].replace('_', ' ')
